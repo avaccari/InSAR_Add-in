@@ -1,0 +1,39 @@
+<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>InSAR Analysis</Name>
+    <AddInID>{774087ff-bc38-42f5-8afc-826371c75375}</AddInID>
+    <Description>Provides a toolset for analysis of InSAR images</Description>
+    <Version>0.0.2</Version>
+    <Image />
+    <Author>Andrea Vaccari (viva.uva@gmail.com)</Author>
+    <Company>University of Virginia Image and Video Analysis Laboratory (VIVA - http://viva-lab.ece.virginia.edu)</Company>
+    <Date>10/20/2014</Date>
+    <Targets>
+        <Target name="Desktop" version="10.1" />
+    </Targets>
+    <AddIn language="PYTHON" library="InSAR_addin.py" namespace="InSAR_addin">
+        <ArcMap>
+            <Commands>
+                <Tool caption="Average displacement velocity" category="InSAR Analysis" class="AverageDisplacementVelocity" id="avedispvelid" image="images/avedispvel.png" message="Evaluate the average displacement velocity of the selected region" tip="Evaluate the average displacement velocity">
+                    <Help heading="Average displacement velocityl">Evaluate the average displacement velocity of the selected region</Help>
+                </Tool>
+                <Tool caption="Subsidence residual" category="InSAR Analysis" class="SubsidenceResidual" id="subresid" image="images/subres.png" message="Evaluate the subsidence residual for the selected region" tip="Evaluate the subsidence residual">
+                    <Help heading="Subsidence Residual">Evaluate the subsidence residual for the selected region</Help>
+                </Tool>
+                <Button caption="About" category="InSAR Analysis" class="AboutButton" id="aboutid" image="images/about.png" message="About" tip="About">
+                    <Help heading="About">About</Help>
+                </Button>
+            </Commands>
+            <Extensions></Extensions>
+            <Toolbars>
+                <Toolbar caption="InSAR Analysis" category="InSAR Analysis" id="tbarid" showInitially="true">
+                    <Items>
+                        <Tool refID="avedispvelid" />
+                        <Tool refID="subresid" />
+                        <Button refID="aboutid" />
+                    </Items>
+                </Toolbar>
+            </Toolbars>
+            <Menus></Menus>
+        </ArcMap>
+    </AddIn>
+</ESRI.Configuration>
